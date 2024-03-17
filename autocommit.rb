@@ -9,32 +9,52 @@ class Autocommit < Formula
   end
 
   def post_install
-    puts <<~EOS
-      ====================================================================
-      AutoCommit is now installed!
-      To enable AutoCommit features in your terminal sessions, add the
-      following line to your .zshrc file:
+  puts <<~EOS
 
-      source $(brew --prefix)/bin/gitCommand.sh
 
-      in order to add script automatically, submit next command
 
-      echo 'source $(brew --prefix)/bin/gitCommand.sh' >> ~/.zshrc ; source ~/.zshrc
+    ====================================================================
+    🎉 AUTO-COMMIT IS NOW INSTALLED! 🎉
 
-      Then, restart your terminal or run `source ~/.zshrc`.
-      ====================================================================
-    EOS
+    To ENABLE AutoCommit features in your terminal sessions:
+
+    1. Add the following line to your .zshrc file by submitting the command below 
+
+       echo 'source $(brew --prefix)/bin/gitCommand.sh' >> ~/.zshrc; source ~/.zshrc
+
+    2. If above command doesn't work, add next line to your .zshrc file manually.
+
+	   echo 'source $(brew --prefix)/bin/gitCommand.sh
+
+    🛑 If you ever decide to UNINSTALL AutoCommit, remember to remove
+    the line from your .zshrc manually. You can use this command:
+
+       sed -i '' '/source $(brew --prefix)\\/bin\\/gitCommand.sh/d' ~/.zshrc
+
+    ====================================================================
+
+
+
+  EOS
   end
 
+
   def caveats; <<~EOS
+
+
+
   If you ever decide to uninstall AutoCommit, you might want to remove
   the following line from your .zshrc manually:
 
+
   source $(brew --prefix)/bin/gitCommand.sh
+
 
   You can use the following command to remove it:
 
   sed -i '' '/source $(brew --prefix)\\/bin\\/gitCommand.sh/d' ~/.zshrc
+
+
   EOS
   end
 end
