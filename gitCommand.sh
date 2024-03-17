@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # git 명령어를 위한 범용 함수
 gitCommit() {
     if [[ -z "$2" ]]; then
@@ -9,7 +7,7 @@ gitCommit() {
     fi
 }
 
-#git alias 설정
+# git alias 설정
 alias gitFeat='gitCommit "⭐ feat"'
 alias gitChore='gitCommit "⚙️ chore"'
 alias gitFix='gitCommit "🐞 fix"'
@@ -20,5 +18,5 @@ alias gitTest='gitCommit "🚦 test"'
 alias gitCI='gitCommit "🚀 CI"'
 alias gitRelease='gitCommit "🔖 release"'
 alias gitInit='gitCommit "🎉 init"'
-alias gitConfig='gitCommit "🛠️   config"'
+alias gitConfig='gitCommit "🛠️  config"'
 alias gitRevert='gitCommit "🦔 revert"'
